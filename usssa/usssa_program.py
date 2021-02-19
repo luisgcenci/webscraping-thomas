@@ -52,7 +52,7 @@ def create_team(team_name, team_class, team_age, team_city, team_state, team_coa
         'team_class':"", 
         'team_points': "", 
         'usssa_class': team_class,
-        'tournaments': 
+        'tournaments':
         {
             'FASA': 
             { 
@@ -108,7 +108,6 @@ def getTeamInfo(usssa_db, teams_db, team_class, team_url, game_id):
         try:
             team = driver.find_elements_by_css_selector('.table-responsive-sm > table > tbody > tr').pop(i)
             team_name = team.find_element_by_tag_name('td').text.strip()
-            team_link = team.find_element_by_css_selector('td > a')
             
             team_info = team.find_elements_by_tag_name('td')
             team_age = team_info.pop(1).text.strip()
