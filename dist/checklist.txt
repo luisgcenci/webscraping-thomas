@@ -1,0 +1,2 @@
+  1) Make sure you delete Spreadsheet and Spreadsheet2 once you copy/cut them to your computer before you run the program again..otherwise it will try to
+overwrite those files and the program will fail.

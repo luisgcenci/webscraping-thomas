@@ -1,0 +1,17 @@
+1) put the spreadsheets: spreadsheet1, spreadsheet2
+
+2) Delete Duplicate Data for Spreadsheet and Spreadsheet2
+
+How to: https://support.microsoft.com/en-us/office/filter-for-unique-values-or-remove-duplicate-values-ccf664b0-81d6-449b-bbe1-8daaec1e83c2
+
+**Select all the columns, clice remove duplicate values, unselect "GAME/TOURNAMENT ID"**
+
+**You might need help with this, hit me up if anything.**
+
+4) Include this formulas in spreadsheet1 under Season:
+
+=VLOOKUP(D3,Coaches!$A$2:$K$779,11,0) and apply it for all the ones below (just double click in the right bottom corner of the cell, or google
+"how to apply the same formula to all rows in the same column").
+
+6) Make sure you delete Spreadsheet and Spreadsheet2 once you copy/cut them to your computer before you run the program again..otherwise it will try to
+overwrite those files and the program will fail.
