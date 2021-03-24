@@ -159,6 +159,8 @@ def getTeamInfo(teams_db,  usfa_db):
         time.sleep(1)
 
         count+=1
+        if count == 2:
+            break
 
 
 driver = launchBrowser()
