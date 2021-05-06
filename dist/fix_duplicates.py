@@ -32,7 +32,6 @@ def fix_part1(data_to_fix):
 
 def fix_part2(teams):
     
-    print(len(teams))
     count = 0
 
     try:
@@ -57,13 +56,10 @@ def fix_part2(teams):
                                     game['game_id'] != game_poss_dupl['game_id']):
 
                                     count += 1
-                                    print(teams[o_team]['tournaments'][o_t]['games'][o_g])
                                     del teams[o_team]['tournaments'][o_t]['games'][o_g]
     except Exception as e:
         pass
 
-    
-    print("{} duplicated rows deleted.".format(count))
     return teams
 
 remove_keys = []

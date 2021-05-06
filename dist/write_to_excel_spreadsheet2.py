@@ -3,7 +3,7 @@ import xlwt
 from xlwt import Workbook
 
 data = {}
-with open('./data_out/fixed_fasa_usfa_usssa_data.json', 'r') as file:
+with open('./data_out/fixed2_fasa_usfa_usssa_data.json', 'r') as file:
     data = json.load(file)
 
 def write_to_excel_spreadsheet(fasa_and_usfa_data):
@@ -152,7 +152,10 @@ def write_to_excel_spreadsheet(fasa_and_usfa_data):
         team_id += 1
         row += 1
             
-    
+    print("saving spreadsheet2...");
+
     wb.save('./data_out/spreadsheet2.xls')
+
+    print("spreadsheet2 saved!")
 
 write_to_excel_spreadsheet(data)

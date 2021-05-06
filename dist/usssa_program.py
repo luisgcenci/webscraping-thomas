@@ -221,6 +221,9 @@ def getTeamInfo(usssa_db, teams_db, team_class, team_url, game_id):
                     game_id += 1
         count += 1
 
+        if count == 2:
+            break;
+
     driver.quit()
     return game_id
 
@@ -232,6 +235,7 @@ def main(game_id, teams_db, usssa_db):
         team_class = row[0].value
         team_url = row[1].value
         game_id = getTeamInfo(usssa_db, teams_db, team_class, team_url, game_id)
+        break;
 
 links = {}
 teams_db = {}
@@ -245,8 +249,6 @@ data.close()
 
 main(game_id, teams_db, usssa_db)
 
-print("USSA Almost Finished!")
-
 with open('./data_out/fasa_usfa_usssa_data.json', 'w') as fud:
     json.dump(teams_db, fud)
 
@@ -256,5 +258,3 @@ with open('./data_out/usssa_data.json', 'w') as ud:
     json.dump(usssa_db, ud)
 
 ud.close()
-
-print("Finished!")

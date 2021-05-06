@@ -207,9 +207,6 @@ def getTeamInfo(teams_db):
         time.sleep(1)
         
         search_btn = driver.find_element_by_xpath("//input[@type='submit' and @value='Search']")
-        # search_team = driver.find_element_by_css_selector("table > tbody > tr > td > input")
-        # search_team.send_keys("007 Brignac 10U")
-        # search_btn.click()
 
         time.sleep(1)
         
@@ -228,6 +225,9 @@ def getTeamInfo(teams_db):
         game_id = getTournamentsAndGamesPage(tournaments_link, team_name, team_age, tourn_sanction, game_id, teams_db)
         count+=1
 
+        if count == 2:
+            break;
+
 
 driver = launchBrowser()
 
@@ -235,16 +235,6 @@ teams_db = {}
 getTeamInfo(teams_db)
 
 driver.quit()
-
-fasa_coaches = {}
-
-with open('./data_given/fasa_coaches.json', 'r') as file:
-    fasa_coaches = json.load(file)
-
-for t in teams_db:
-    for c in fasa_coaches:
-        if teams_db[t]['team_name'] == c:
-            teams_db[t]['team_coach'] = fasa_coaches[c]
 
 with open('./data_out/fasa_data.json', 'w') as fd:
     json.dump(teams_db, fd)

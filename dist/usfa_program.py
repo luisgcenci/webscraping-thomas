@@ -91,10 +91,7 @@ def getTeamInfo(teams_db,  usfa_db):
     tournaments = driver.find_elements_by_class_name('event_top')
 
     tournaments_length = len(tournaments)
-    print(tournaments_length)
     count = 0
-
-    # print(tournaments_length)
 
     for i in range(tournaments_length):
         tourn = driver.find_elements_by_class_name("event_top").pop(i)
@@ -159,6 +156,8 @@ def getTeamInfo(teams_db,  usfa_db):
         time.sleep(1)
 
         count+=1
+        if count == 2:
+            break;
 
 
 driver = launchBrowser()
