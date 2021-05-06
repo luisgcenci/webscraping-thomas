@@ -225,9 +225,6 @@ def getTeamInfo(teams_db):
         game_id = getTournamentsAndGamesPage(tournaments_link, team_name, team_age, tourn_sanction, game_id, teams_db)
         count+=1
 
-        if count == 2:
-            break;
-
 
 driver = launchBrowser()
 
